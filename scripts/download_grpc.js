@@ -41,7 +41,7 @@ let [
 
 const archTransform = {
   ia32: 'x84',
-  armv7: 'x64',
+  arm: 'x64',
   // I only assume this is correct
   arm64: 'x64',
 };
