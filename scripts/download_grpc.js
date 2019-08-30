@@ -39,6 +39,15 @@ const [
   libc,
 ] = archString.split('-');
 
+const archTransform = {
+  ia32: 'x84',
+  armv7: 'x64',
+  // I only assume this is correct
+  arm64: 'x64',
+};
+
+arch = archTransform[arch] || arch;
+
 const host = grpcPackageJson.binary.host;
 const remote_path = eval_template(grpcPackageJson.binary.remote_path, { name, version });
 const package_name = eval_template(grpcPackageJson.binary.package_name, { node_abi, platform, arch, libc });
