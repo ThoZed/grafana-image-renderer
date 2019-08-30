@@ -30,7 +30,7 @@ const archString = process.argv[2];
 const pluginDir =  `plugin-${archString}`;
 // See https://console.cloud.google.com/storage/browser/node-precompiled-binaries.grpc.io/grpc/?project=grpc-testing
 // for existing prebuild binaries (though there are only ones for newer version).
-const [
+let [
   // linux, darwin, win32
   platform,
   // ia32, x64, arm, arm64
